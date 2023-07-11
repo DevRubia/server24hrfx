@@ -56,7 +56,7 @@ $lastLoginTime = date('Y-m-d H:i:s', strtotime($lastLoginTime . ' +3 hours'));
     <!-- include summernote css/js -->
     <link href="./newDashboard_files/summernote-bs4.css" rel="stylesheet">
     <link rel="stylesheet" href="./newDashboard_files/intlTelInput.css">
-    <link rel="stylesheet" href="./css/newdash.css">
+<!--     <link rel="stylesheet" href="./css/newdash.css"> -->
   
     <script src="loader.js"></script>
     
