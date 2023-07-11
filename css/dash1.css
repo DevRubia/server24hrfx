@@ -1,0 +1,30 @@
+    * {
+        background: black;
+        color: white!important;
+    }
+    
+    body {
+        justify-content: center;
+        display: flex;
+        overflow: auto;
+        width: 100%;
+    }
+    
+    .chart2 {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .disp ul li i {
+        display: flex;
+        /* align-items: center; */
+        float: right;
+    }
+    
+    .disp ul li i a {
+        display: flex;
+        /* align-items: center; */
+        float: right;
+    }

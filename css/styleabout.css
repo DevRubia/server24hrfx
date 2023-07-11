@@ -1,0 +1,8 @@
+.wrapper {
+    margin: 20px;
+    display: flex;
+    font-size: large;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+}
