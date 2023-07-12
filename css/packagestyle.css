@@ -1,0 +1,122 @@
+.flip-card {
+    background-color: transparent;
+    width: 190px;
+    height: 254px;
+    perspective: 1000px;
+    font-family: sans-serif;
+}
+
+body {
+    background: rgba(255, 255, 255, 0.889);
+}
+
+h3 {
+    font-size: 18px;
+}
+
+.title {
+    font-size: 1.5em;
+    font-weight: 900;
+    text-align: center;
+    margin: 0;
+    margin-top: 30px;
+}
+
+.package-wrapper {
+    margin-top: 40px;
+    display: flex;
+    gap: 20px;
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+    box-shadow: 0 8px 14px 0 rgba(0, 0, 0, 0.2);
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 1rem;
+}
+
+.front {
+    position: absolute;
+    top: 30%;
+}
+
+.deposit {
+    position: absolute;
+    top: 30%;
+    height: 70%;
+    overflow: hidden;
+    width: 100%;
+    color: black;
+    right: 25%;
+    font-size: 10px;
+}
+
+.income {
+    font-size: 10px;
+    overflow: hidden;
+    position: absolute;
+    height: 70%;
+    color: black;
+    width: 100%;
+    top: 30%;
+    left: 25%;
+}
+
+.deposit .income:hover {
+    background: rgb(61, 61, 61);
+}
+
+.flip-card-front {
+    background: linear-gradient(120deg, rgb(251, 244, 236) 60%, rgb(255, 231, 222) 88%, rgb(159, 152, 151) 40%, rgb(251, 135, 96) 78% 48%);
+    color: rgba(0, 0, 0, 0.804);
+}
+
+.flip-card-back {
+    background: linear-gradient(120deg, rgb(140, 138, 138) 30%, #f0f4f4 88%, bisque 40%, rgb(251, 135, 96) 78%);
+    color: white;
+    transform: rotateY(180deg);
+}
+
+@media only screen and (max-width:700px) {
+    .package-wrapper {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        margin: 10px;
+        overflow: hidden;
+        width: 70%;
+        height: inherit;
+        left: 5%;
+        padding: 20px;
+        align-items: center;
+        justify-content: center;
+    }
+    .flip-card {
+        padding: 2px;
+        margin-left: 10%;
+    }
+}

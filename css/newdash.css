@@ -1,0 +1,24 @@
+.chart {
+    /* overflow: hidden; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+* {
+    background-color: rgb(0, 0, 0) !important;
+    color: white !important;
+    margin: 0;
+}
+
+.iso {
+    /* border: 2px solid red; */
+    box-shadow: 0 4px 86px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    ;
+}
+
+#medbod {
+    border: 2px solid rgba(63, 103, 249, 0.563) !important;
+    z-index: 99999;
+    background: purple;
+}
