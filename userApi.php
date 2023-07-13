@@ -1,13 +1,11 @@
 <?php
 include('conndb.php');
-$users=$auth->listUsers();
-// $i=1;
-header('Content-Type: application/json'); 
+//create api to fetch current user
+$email = $_SESSION['userEmail'];
 
-echo json_encode($users);
-//  foreach($users){
+$user = $auth->getUserByEmail($email);
+header('Content-Type: application.json');
+echo json_encode($user);
 
-
-// }
 								
 ?>
