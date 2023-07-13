@@ -1,11 +1,22 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 include('conndb.php');
+include('authentication.php');
 //create api to fetch current user
-$email = $_SESSION['userEmail'];
-$user=$auth->getUserByEmail($email);
+$userProperties = $_SESSION['userProperties'];
+ $email = $userProperties['userEmail'];
+try{
+    $user = $auth->getUserByEmail("$email");
 
-header('Content-Type: application/json'); 
+}catch(Exception $e){
 
-echo json_encode($user);
-								
+    echo "Failed to fetch user json data: ".$e->getMessage();
+
+}
+
+header('Content-Type: application.json');
+echo json_encode($user);								
+
 ?>
