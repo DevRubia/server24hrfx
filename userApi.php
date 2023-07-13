@@ -1,10 +1,11 @@
 <?php
 include('conndb.php');
-$users=$auth->listUsers();
+$email = $_SESSION['userEmail'];
+$user=$auth->getUserByEmail($email);
 // $i=1;
 header('Content-Type: application/json'); 
 
-echo json_encode($users);
+echo json_encode($user);
 //  foreach($users){
 
 
