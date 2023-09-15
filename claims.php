@@ -140,6 +140,13 @@ if(isset($_SESSION['status']))
 								<!--<a href="newdashboard.php" class="btn btn-primary float-end">dashboard</a>-->
 							</h2>
 						</div>
+						<div class="mb-3">
+							<p></p>
+						<form class="d-flex" method="POST" action="AuthSearch.php">
+							<input class="form-control me-2" type="search" name="search_email" placeholder="Search by Email" aria-label="Search" Required>
+							<button class="btn btn-outline-success" type="submit" name="search_submit">Search</button>
+						</form>
+						</div>
 						<div class="card-body container hold">
 							<table class=" table table-bordered table-striped bg-dark">
 								<thead>
@@ -148,9 +155,9 @@ if(isset($_SESSION['status']))
 										<th class="text-white">UserName</th>
 										<th class="text-white">Email</th>
 										<th class="text-white">UserID</th>
-										<th class="text-white">DbReloadTime</th>
+										
 										<th class="text-white">Role</th>
-										<th class="text-white">Edit</th>
+										<th class="text-white">EditRole</th>
 										<th class="text-white">DeleteUser</th>
 									</tr>
 								</thead>
@@ -173,7 +180,7 @@ if(isset($_SESSION['status']))
 										    <td class="text-white"><?=$row->displayName?></td>
 											<td class="text-white"><?=$row->email?></td>
 											<td class="text-white"><?=$row->uid?></td>
-											<td class="text-white"><?=date('Y-m-d H:i:s', $user->metadata->creationTimestamp) . PHP_EOL;?></td>
+									
 											<td>
 
                                             <span class="text-white">

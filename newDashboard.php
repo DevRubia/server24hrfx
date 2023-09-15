@@ -4,7 +4,21 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 include('authentication.php');
 $userProperties = $_SESSION['userProperties']; 
+try{
 $fetchEmail = $userProperties['userEmail'];
+    if($fetchEmail){
+
+    }else{
+        $_SESSION['status']="Account attention needed Contact admin @helpdesk.24hrfxtradingorg@gmail.com!";
+        header('Location: 404.php');
+        exit();
+    }
+}catch(Exception $e){
+
+                    $_SESSION['status']="Account attention needed Contact admin @helpdesk.24hrfxtradingorg@gmail.com!";
+                     header('Location: 404.php');
+                     exit();
+}
 
 include('conndb.php');
 //get users lastloginTime from auth -> metadata
@@ -26,7 +40,7 @@ $lastLoginTime = $fetchLastLoginTime->format('Y-m-d H:i:s');
 //add 3 hours to lastLoginTime
 $lastLoginTime = date('Y-m-d H:i:s', strtotime($lastLoginTime . ' +3 hours'));
 
-
+echo "<script> var lastLoginTime = '$lastLoginTime';</script>";
 
 
 ?>
@@ -56,12 +70,13 @@ $lastLoginTime = date('Y-m-d H:i:s', strtotime($lastLoginTime . ' +3 hours'));
     <!-- include summernote css/js -->
     <link href="./newDashboard_files/summernote-bs4.css" rel="stylesheet">
     <link rel="stylesheet" href="./newDashboard_files/intlTelInput.css">
-<!--     <link rel="stylesheet" href="./css/newdash.css"> -->
+    <link rel="stylesheet" href="./css/newdash.css">
   
     <script src="loader.js"></script>
     
     <script src="./newDashboard_files/twk-main.js.download" charset="UTF-8" crossorigin="*"></script><script src="./newDashboard_files/twk-vendor.js.download" charset="UTF-8" crossorigin="*"></script><script src="./newDashboard_files/twk-chunk-vendors.js.download" charset="UTF-8" crossorigin="*"></script><script src="./newDashboard_files/twk-chunk-common.js.download" charset="UTF-8" crossorigin="*"></script><script src="./newDashboard_files/twk-runtime.js.download" charset="UTF-8" crossorigin="*"></script><script src="./newDashboard_files/twk-app.js.download" charset="UTF-8" crossorigin="*"></script><script async="" src="./newDashboard_files/default" charset="UTF-8" crossorigin="*"></script><script src="./newDashboard_files/jquery.min.js.download"></script>
-    <style type="text/css">/* Chart.js */
+    <script src="./notification.js"></script>
+   <style type="text/css">/* Chart.js */
 @keyframes chartjs-render-animation{from{opacity:.99}to{opacity:1}}.chartjs-render-monitor{animation:chartjs-render-animation 1ms}.chartjs-size-monitor,.chartjs-size-monitor-expand,.chartjs-size-monitor-shrink{position:absolute;direction:ltr;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1}.chartjs-size-monitor-expand>div{position:absolute;width:1000000px;height:1000000px;left:0;top:0}.chartjs-size-monitor-shrink>div{position:absolute;width:200%;height:200%;left:0;top:0}</style><style type="text/css">@font-face { font-family: Roboto; src: url("chrome-extension://mcgbeeipkmelnpldkobichboakdfaeon/css/Roboto-Regular.ttf"); }</style><script charset="utf-8" src="./newDashboard_files/twk-chunk-2c78ba82.js.download"></script><script charset="utf-8" src="./newDashboard_files/twk-chunk-696bc286.js.download"></script><script charset="utf-8" src="./newDashboard_files/twk-chunk-f1596d96.js.download"></script><script charset="utf-8" src="./newDashboard_files/twk-chunk-48f46bef.js.download"></script><script charset="utf-8" src="./newDashboard_files/twk-chunk-4fe9d5dd.js.download"></script><script charset="utf-8" src="./newDashboard_files/twk-chunk-2d0b9454.js.download"></script><script charset="utf-8" src="./newDashboard_files/twk-chunk-f163fcd0.js.download"></script><script charset="utf-8" src="./newDashboard_files/twk-chunk-32507910.js.download"></script><style type="text/css">#mulaecv547eg1675262278346 {outline:none !important;
 visibility:visible !important;
 resize:none !important;

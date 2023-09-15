@@ -3,9 +3,7 @@ include('authentication.php');
 include('adminAuth.php');
 
 $userProperties = $_SESSION['userProperties'];
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -44,7 +42,7 @@ error_reporting(E_ALL);
                             <a class="nav-link" href="packages.php">PACKAGES</a>
                         </li>
                        <li class="nav-item">
-                           <a class="nav-link" href="paid2.php">PAID</a>
+                           <a class="nav-link" href="paid.php">PAID</a>
                           </li> 
                         
 						  <?php
@@ -152,6 +150,14 @@ if(isset($_SESSION['status']))
 							</h2>
 						</div>
 						<div class="card-body container hold">
+
+						<div class="mb-3">
+						<form class="d-flex" method="POST" action="searchFuntion.php">
+							<input class="form-control me-2" type="search" name="search_email" placeholder="Search by Email" aria-label="Search" Required>
+							<button class="btn btn-outline-success" type="submit" name="search_submit">Search</button>
+						</form>
+						</div>
+
 							<table class=" table table-bordered table-striped">
 								<thead>
 									<tr>
@@ -164,29 +170,25 @@ if(isset($_SESSION['status']))
 										<th>Withdrawal</th>
 										<th>Insuarance</th>
 										<th>FeeWithdrawal</th>
-										<th>DepositStatement</th>
 										<th>Status</th>
 										<th>Edit</th>
-										<th>DelUserData</th>
 									</tr>
 								</thead>
 								<tbody>
 								<?php
 									include('conndb.php');
 									
-								$user=$database->getReference('users/');
-									// ->getValue();
 									
-									$query = $user->orderByChild('name');
-				
-									$snapshot = $query->getSnapshot();
-									$userr = $snapshot->getValue();
+									$users=$auth->listUsers();
+									$result=$database->getReference('users/')->getValue();
 									
-									if($userr > 0)
+									if($result > 0)
 									
 									{
 										$i=1;
-										foreach($userr as $key => $row){
+										foreach($result as $key => $row){
+											// var_dump($row);
+											// die();
 								?>
 											<tr>
 											<td><?=$i++;?></td>
@@ -198,7 +200,6 @@ if(isset($_SESSION['status']))
 											<td><?=$row['withdrawal']?></td>
 											<td><?=$row['insuarance']?></td>
 											<td><?=$row['withdrawalFund']?></td>
-											<td><?=$row['depTransaction']?></td>
 											<td><?=$row['status']?></td>
 											
 											<td>
@@ -206,10 +207,9 @@ if(isset($_SESSION['status']))
 											</td>
 											<td>
 												<form method="post" action="deleteDb.php">
-													<button type="submit" name="deleteDb_php" value="<?=$key;?>" class="btn btn-danger btn-sm">DeleteData</button>
+													<button type="submit" name="deleteDb_php" value="<?=$uid;?>" class="btn btn-danger btn-sm">DeleteData</button>
 												</form>
 											</td>
-											
 											</tr>
 								<?php
 										}
