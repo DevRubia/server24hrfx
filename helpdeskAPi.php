@@ -3,22 +3,18 @@ header("Access-Control-Allow-Origin: *"); // Allow any origin to access this scr
 header("Content-Type: application/json; charset=UTF-8");
 header("Access-Control-Allow-Methods: POST");
 
-$userProperties = $_SESSION['userProperties'];
-if($_SERVER["REQUEST_METHOD"] == "POST"){
+
+// if($_SERVER["REQUEST_METHOD"] == "POST"){
 //if(isset($_POST['sendhelp'])){
     $message = $_POST['message'];
-    $Requestemail =$userProperties['userEmail'];
+    $Requestemail=$_POST['recipientEmail'];
     $requestName=$userProperties['name'];
 
 //}
-// $response = [
-//     "status" => "success",
-//     "message" => "Email sent successfully"
-// ];
-// echo json_encode($response);
-}else{
-    exit();
-}
+
+// }else{
+//     exit();
+// }
 
 
 require './phpmailer/includes/PHPMailer.php';
