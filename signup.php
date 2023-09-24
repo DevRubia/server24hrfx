@@ -21,8 +21,7 @@ use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
 
-if(isset($_POST['save-contact']))
-{
+
 $userName=$_POST['username'];
 $fullname=$_POST['fullname'];
 $email=$_POST['email'];
@@ -31,7 +30,7 @@ $pass=$_POST['password'];
 $confirmPass=$_POST['ConfirmPassword'];
 $countryCode=$_POST['countryCode'];
 $phoneNumber=$countryCode . $phone;
-};
+
 
 //email address to check
 $userEmail = $email;
@@ -45,7 +44,7 @@ try {
      if($user !== null) {
     // User exists
     $_SESSION['status']="ALERT: Email address exists";
-    header('Location: landingpage.php');
+    header('Location:  https://24hrfxtradingorg.co.ke/landingpage.php');
     exit();
      }
      
@@ -63,7 +62,7 @@ try  {
         if($user1 !== null) {
     // User exists
     $_SESSION['status']="ALERT:Phone Number exists";
-    header('Location: landingpage.php');
+    header('Location:  https://24hrfxtradingorg.co.ke/landingpage.php');
     exit();
         
     }
@@ -82,13 +81,13 @@ if (strlen($userPhone) <= 10) {
     // Throw an error or handle the validation failure
     $_SESSION['status']="ALERT:Invalid phone number! less or Invalid Charachters(*,+,|,?,/)";
     // You can also redirect the user back to the form or display an error message
-    header('Location: landingpage.php');
+    header('Location:  https://24hrfxtradingorg.co.ke/landingpage.php');
     exit();
 }
 
 if(strlen($pass) < 8){
     $_SESSION['status']="ALERT:Password should be >= 8 charachters! include!@?/ Capital,upper,lowercase letters and numerics";
-    header('Location: landingpage.php?error=shortPassword');
+    header('Location: https://24hrfxtradingorg.co.ke/landingpage.php?error=shortPassword');
     exit();
 }
 
@@ -199,17 +198,17 @@ Instagram : http://www.instagram.com/24hrfx_tradingorg
 //Finally send email
 	if ( $mail->send() ) {
 		   $_SESSION['status']="sign in was successful..Check email to make sure you receive information appropriately";
-            header('Location: landingpage.php');
+            header('Location:  https://24hrfxtradingorg.co.ke/landingpage.php');
             exit();
 	}else{
 		$_SESSION['status']="sign in Email not sent ..sign in was not successful";
-            header('Location: landingpage.php');
+            header('Location:  https://24hrfxtradingorg.co.ke/landingpage.php');
             exit();
 		
 	}
 }catch(Exception $e){
 	        $_SESSION['status']="sign in Email not sent ..debug Mailer";
-            header('Location: landingpage.php');
+            header('Location:  https://24hrfxtradingorg.co.ke/landingpage.php');
             exit();
 		;
 }
@@ -223,12 +222,12 @@ Instagram : http://www.instagram.com/24hrfx_tradingorg
             
         }else{
             $_SESSION['status']="sign in Error...";
-            header('Location: landingpage.php');
+            header('Location:  https://24hrfxtradingorg.co.ke/landingpage.php');
             exit();
         }
 }else{
     $_SESSION['status']="passwords do not match";
-    header('Location: landingpage.php');
+    header('Location:  https://24hrfxtradingorg.co.ke/landingpage.php');
     exit(); 
 }
 
