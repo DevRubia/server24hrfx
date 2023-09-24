@@ -8,7 +8,7 @@ header("Access-Control-Allow-Methods: POST");
 //if(isset($_POST['sendhelp'])){
     $message = $_POST['message'];
     $Requestemail=$_POST['recipientEmail'];
-    $requestName=$userProperties['name'];
+     $requestName=$_POST['from_name'];
 
 //}
 
