@@ -12,9 +12,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
 }
 
-}else{
-    exit();
-}
 
 
 require './phpmailer/includes/PHPMailer.php';
