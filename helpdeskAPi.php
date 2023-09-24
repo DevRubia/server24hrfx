@@ -77,19 +77,19 @@ $message
 $mail->addAddress('helpdesk.24hrfxtradingorg@gmail.com');
 if ( $mail->send() ) {
     $_SESSION['status']=" Successfully contacted help desk, stay connected with us. reviewing your issue ";
-    header('Location: http://localhost/newDashboard.php?status=success');
+    header('Location: http://localhost/TestCaseProject/newDashboard.php?status=success');
     exit();
     
 }else{
     
     $_SESSION['status']="Issue request failed to deploy: Server Error!!=?404";
-    header('Location: http://localhost/newDashboard.php?status=success.php');
+    header('Location: http://localhost/TestCaseProject/newDashboard.php?status=success.php');
     exit();
     
 }
 }catch(Exception $e){
     $_SESSION['status']="failed!!!";
-    header('Location: http://localhost/newDashboard.php?status=success.php');
+    header('Location: http://localhost/TestCaseProject/newDashboard.php?status=success.php');
     exit();
 }
 //Closing smtp connection
