@@ -7,7 +7,7 @@ $userProperties = $_SESSION['userProperties'];
 if($_SERVER["REQUEST_METHOD"] == "POST"){
 //if(isset($_POST['sendhelp'])){
     $message = $_POST['message'];
-    $Requestemail=$userProperties['userEmail'];
+    $Requestemail =$userProperties['userEmail'];
     $requestName=$userProperties['name'];
 
 //}
