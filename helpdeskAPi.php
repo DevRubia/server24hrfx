@@ -85,7 +85,7 @@ if ( $mail->send() ) {
 }
 }catch(Exception $e){
     $_SESSION['status']="failed!!!";
-    header('Location: https://24hrfxtradingorg.co.ke/newDashboard.php?status=ERRORBACKEND.php');
+    header('Location: https://24hrfxtradingorg.co.ke/newDashboard.php?status=error.php');
     exit();
 }
 //Closing smtp connection
