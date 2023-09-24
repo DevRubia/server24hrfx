@@ -4,17 +4,17 @@ header("Content-Type: application/json; charset=UTF-8");
 header("Access-Control-Allow-Methods: POST");
 
 
-// if($_SERVER["REQUEST_METHOD"] == "POST"){
-//if(isset($_POST['sendhelp'])){
+if($_SERVER["REQUEST_METHOD"] == "POST"){
+
     $message = $_POST['message'];
     $Requestemail=$_POST['recipientEmail'];
      $requestName=$_POST['from_name'];
 
-//}
+}
 
-// }else{
-//     exit();
-// }
+}else{
+    exit();
+}
 
 
 require './phpmailer/includes/PHPMailer.php';
