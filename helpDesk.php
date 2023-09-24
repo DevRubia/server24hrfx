@@ -1,6 +1,8 @@
 <?php
 include('authentication.php');
 $userProperties = $_SESSION['userProperties'];
+$Requestemail=$userProperties['userEmail'];
+$requestName=$userProperties['name'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -153,6 +155,8 @@ $userProperties = $_SESSION['userProperties'];
 
 
                                                             <label>write to us below;</label>
+								    <input type="hidden" name="from_name" value="<?=$requestName?>">
+                                                            <input type="hidden" name="recipientEmail" value="<?=$Requestemail?>">
                                                             <textarea id="editor" name="message"></textarea>
 
                                                             <div></div>
