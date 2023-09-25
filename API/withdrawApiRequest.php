@@ -42,9 +42,7 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 //Create instance of PHPMailer
-$userProperties = $_SESSION['userProperties'];
-$name=$userProperties['name'];
-$usermail=$userProperties['userEmail'];
+
 
 $mail = new PHPMailer(true);
 //Set mailer to use smtp
@@ -115,7 +113,7 @@ Instagram : http://www.instagram.com/24hrfx_tradingorg
 </h3> ";
 
 
-$mail->addAddress($userEmail);
+$mail->addAddress($usermail);
 //Finally send email
 if ( $mail->send() ) {
 
