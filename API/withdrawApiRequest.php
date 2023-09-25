@@ -34,9 +34,9 @@ $name=$_POST['name'];
 }
 //Include required PHPMailer files
 
-require './phpmailer/includes/PHPMailer.php';
-require './phpmailer/includes/SMTP.php';
-require './phpmailer/includes/Exception.php';
+require '../phpmailer/includes/PHPMailer.php';
+require '../phpmailer/includes/SMTP.php';
+require '../phpmailer/includes/Exception.php';
 //Define name spaces
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
