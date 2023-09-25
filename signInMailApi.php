@@ -14,9 +14,9 @@ use PHPMailer\PHPMailer\Exception;
 
 if($_SERVER["REQUEST_METHOD"] == "POST"){
 
-    $message = $_POST['from_name'];
-    $Requestemail=$_POST['recipientEmail'];
-     $requestName=$_POST['currentDate'];
+    $from_name = $_POST['from_name'];
+    $recipientEmail=$_POST['recipientEmail'];
+     $currentDate=$_POST['currentDate'];
     
 }
 
