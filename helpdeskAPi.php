@@ -6,12 +6,9 @@ header("Access-Control-Allow-Methods: POST");
 
 if($_SERVER["REQUEST_METHOD"] == "POST"){
 
-    $message = $_POST['from_name'];
+    $message = $_POST['message'];
     $Requestemail=$_POST['recipientEmail'];
-     $requestName=$_POST['currentDate'];
-    // $message = $_POST['message'];
-    // $Requestemail=$_POST['recipientEmail'];
-    //  $requestName=$_POST['from_name'];
+     $requestName=$_POST['from_name'];
 }
 
 
@@ -72,22 +69,22 @@ $message
 $mail->addAddress('helpdesk.24hrfxtradingorg@gmail.com');
 if ( $mail->send() ) {
     $_SESSION['status']=" Successfully contacted help desk, stay connected with us. reviewing your issue ";
-    // header('Location: https://24hrfxtradingorg.co.ke/newDashboard.php?status=success');
-    header('Location: http://localhost/TestCaseProject/landingpage.php?status=success');
+    header('Location: https://24hrfxtradingorg.co.ke/newDashboard.php?status=success');
+   
     exit();
     
 }else{
     
     $_SESSION['status']="Issue request failed to deploy: Server Error!!=?404";
-    // header('Location: https://24hrfxtradingorg.co.ke/newDashboard.php?status=error.php');
-    header('Location: http://localhost/TestCaseProject/landingpage.php?status=error.php');
+    header('Location: https://24hrfxtradingorg.co.ke/newDashboard.php?status=error.php');
+   
     exit();
     
 }
 }catch(Exception $e){
     $_SESSION['status']="failed!!!";
-    // header('Location: https://24hrfxtradingorg.co.ke/newDashboard.php?status=error.php');
-    header('Location: http://localhost/TestCaseProject/landingpage.php?status=error.php');
+    header('Location: https://24hrfxtradingorg.co.ke/newDashboard.php?status=error.php');
+    
     exit();
 }
 //Closing smtp connection
