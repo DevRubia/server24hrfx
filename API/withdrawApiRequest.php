@@ -8,7 +8,11 @@ $timestamp=time();
 $formatDate = "Y-m-d";
 $formatTime="h:i:s A";
 $currentDate = date($formatDate);
-$time = date($formatTime, $timestamp, );
+$time = date($formatTime, $timestamp);
+$space='--';
+$time1 = date("h:i A", strtotime("+2 hours", strtotime($time))); // add 2 hours to $time and format it
+ // output the new time value
+$date = $currentDate.$space.$time1;
 
 if($_SERVER["REQUEST_METHOD"] == "POST"){
 
