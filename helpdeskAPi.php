@@ -6,10 +6,12 @@ header("Access-Control-Allow-Methods: POST");
 
 if($_SERVER["REQUEST_METHOD"] == "POST"){
 
-    $message = $_POST['message'];
+    $message = $_POST['from_name'];
     $Requestemail=$_POST['recipientEmail'];
-     $requestName=$_POST['from_name'];
-
+     $requestName=$_POST['currentDate'];
+    // $message = $_POST['message'];
+    // $Requestemail=$_POST['recipientEmail'];
+    //  $requestName=$_POST['from_name'];
 }
 
 
