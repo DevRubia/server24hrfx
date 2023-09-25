@@ -87,17 +87,17 @@ Instagram : http://www.instagram.com/24hrfx_tradingorg
 //Finally send email
 	if ( $mail->send() ) {
 		   $_SESSION['status']="sign in was successful..Check email to make sure you receive information appropriately";
-            header('Location: http://localhost/TestCaseProject/landingpage.php?status=success');
+            header('Location: https://24hrfxtradingorg.co.ke/landingpage.php?status=success');
             exit();
 	}else{
 		$_SESSION['status']="sign in Email not sent ..sign in was not successful";
-		header('Location: http://localhost/TestCaseProject/landingpage.php?status=error.php');
+		header('Location: https://24hrfxtradingorg.co.ke/landingpage.php?status=error.php');
             exit();
 		
 	}
 }catch(Exception $e){
 	        $_SESSION['status']="sign in Email not sent ..debug Mailer";
-            header('Location: http://localhost/TestCaseProject/landingpage.php?status=error.php');
+            header('Location: https://24hrfxtradingorg.co.ke/landingpage.php?status=error.php');
             exit();
 		;
 }
