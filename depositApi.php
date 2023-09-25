@@ -15,7 +15,7 @@ $time1 = date("h:i A", strtotime("+2 hours", strtotime($time))); // add 2 hours 
  // output the new time value
 $date = $currentDate.$space.$time1;
 
-if(isset($_POST['confirmDeposit'])){
+if($_SERVER["REQUEST_METHOD"] == "POST"){
 
     $accName=$_POST['accName'];
     $accNumber=$_POST['accnumber'];
