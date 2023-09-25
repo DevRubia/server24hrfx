@@ -7,8 +7,8 @@ use GuzzleHttp\Client;
 
 
 $factory = (new Factory)
-->withServiceAccount('hrfxtradingorg-firebase-adminsdk-lqotq-35c0ea2f2c.json')
-->withDatabaseUri('https://hrfxtradingorg-default-rtdb.firebaseio.com/');
+->withServiceAccount('clientdb-e7462-firebase-adminsdk-iqoz7-7a99bd3e81.json')
+->withDatabaseUri('https://clientdb-e7462-default-rtdb.firebaseio.com/');
 
 $database = $factory->createDatabase();
 $auth = $factory->createAuth();
