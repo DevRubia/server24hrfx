@@ -21,7 +21,9 @@ $paymentType=$_POST['paymentType'];
 $accountNo=$_POST['accountNo'];
 $accountName=$_POST['accountName'];
 $withdrawable=$_POST['withdrawable'];
-
+$usermail=$_POST['usermail'];
+$name=$_POST['name'];	
+	
 // // insuranceTransactionId
 // $insuaranceTransactionId=$GLOBALS['InsuaranceId'];
 
