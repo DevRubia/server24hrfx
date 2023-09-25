@@ -29,16 +29,16 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $uid=$_POST['uid'];
 }
 //transactions
-$newData = [
-    'status' => $status,
-    'Review' => $Review,
-    'Account' => $Account,
-    'transactionId'=> $transactionId,
-    'amount'=>  $amount,
-    'indexOn'=>  $date
-];   
+// $newData = [
+//     'status' => $status,
+//     'Review' => $Review,
+//     'Account' => $Account,
+//     'transactionId'=> $transactionId,
+//     'amount'=>  $amount,
+//     'indexOn'=>  $date
+// ];   
 
-$customUserProperties = $database->getReference('users/'.$uid.'/transactions/')->push($newData);
+// $customUserProperties = $database->getReference('users/'.$uid.'/transactions/')->push($newData);
 
 
 require './phpmailer/includes/PHPMailer.php';
