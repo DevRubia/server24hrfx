@@ -170,23 +170,23 @@ try{
 	}else{
 		
 		$_SESSION['status']=" Admin request failed to deploy: Send your withdraw details below";
-    header('Location: helpdesk.php');
+    header('Location: https://24hrfxtradingorg.co.ke/helpdesk.php?status=error');
     exit();
 	}
 }catch(Exception $e){
 	$_SESSION['status']="failed!!!";
-    header('Location: newDashboard.php');
+    header('Location: https://24hrfxtradingorg.co.ke/newDashboard.php?status=success');
     exit();
 }
 //Closing smtp connection
 	$mail->smtpClose();
 
 	$_SESSION['status']="Withdrawal request statement has been processed..Check your Email:";
-    header('Location: withdrawPopup.php');
+    header('Location: https://24hrfxtradingorg.co.ke/withdrawPopup.php?status=success');
     exit();
 }else{
 	$_SESSION['status']=" failed to deploy:";
-    header('Location: helpdesk.php');
+    header('Location: https://24hrfxtradingorg.co.ke/helpdesk.php?status=error');
     exit();
 }
 }catch(Exception $e){
