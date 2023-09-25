@@ -127,7 +127,7 @@ if($date)
     //Add recipient
     
     
-    $mail->addAddress($userProperties['userEmail']);
+    $mail->addAddress($usermail);
     //Finally send email
     if ( $mail->send() ) {
     
