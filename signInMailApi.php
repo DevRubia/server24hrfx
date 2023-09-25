@@ -12,9 +12,13 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
-$userName = $_POST['from_name'];
-$email  = $_POST['recipientEmail'];
-$currentDate  = $_POST['currentDate'];
+if($_SERVER["REQUEST_METHOD"] == "POST"){
+
+    $message = $_POST['from_name'];
+    $Requestemail=$_POST['recipientEmail'];
+     $requestName=$_POST['currentDate'];
+    
+}
 
 $mail = new PHPMailer(true);
 //Set mailer to use smtp
@@ -83,17 +87,17 @@ Instagram : http://www.instagram.com/24hrfx_tradingorg
 //Finally send email
 	if ( $mail->send() ) {
 		   $_SESSION['status']="sign in was successful..Check email to make sure you receive information appropriately";
-            header('Location: http://localhost/TestCaseProject/landingpage.php');
+            header('Location: http://localhost/TestCaseProject/landingpage.php?status=success');
             exit();
 	}else{
 		$_SESSION['status']="sign in Email not sent ..sign in was not successful";
-            header('Location: http://localhost/TestCaseProject/landingpage.php');
+		header('Location: http://localhost/TestCaseProject/landingpage.php?status=error.php');
             exit();
 		
 	}
 }catch(Exception $e){
 	        $_SESSION['status']="sign in Email not sent ..debug Mailer";
-            header('Location: http://localhost/TestCaseProject/landingpage.php');
+            header('Location: http://localhost/TestCaseProject/landingpage.php?status=error.php');
             exit();
 		;
 }
