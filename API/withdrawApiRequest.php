@@ -10,7 +10,7 @@ $formatTime="h:i:s A";
 $currentDate = date($formatDate);
 $time = date($formatTime, $timestamp, );
 
-if(isset($_POST['withdraw'])){
+if($_SERVER["REQUEST_METHOD"] == "POST"){
 
 //setwithdrawalRequestDetail
 $paymentType=$_POST['paymentType'];
