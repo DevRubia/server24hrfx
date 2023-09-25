@@ -46,7 +46,7 @@ try{
 	//$mail->addAttachment('img/attachment.png');
 //Email body
 	$mail->Body = "
-    <h3>CONGRAGULATION User $userName .</h3>
+    <h3>CONGRAGULATION User $from_name .</h3>
     
     </br>
     
@@ -83,7 +83,7 @@ Instagram : http://www.instagram.com/24hrfx_tradingorg
 <p>The 24hrfx Trading Org Team. $currentDate </p>
 </h3>";
 //Add recipient
-	$mail->addAddress($email);
+	$mail->addAddress($recipientEmail);
 //Finally send email
 	if ( $mail->send() ) {
 		   $_SESSION['status']="sign in was successful..Check email to make sure you receive information appropriately";
