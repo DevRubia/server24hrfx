@@ -49,7 +49,7 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
-if($customUserProperties)
+if($date)
 {
 //Create instance of PHPMailer
   
