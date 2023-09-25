@@ -2,7 +2,7 @@
 header("Access-Control-Allow-Origin: *"); // Allow any origin to access this script
 header("Content-Type: application/json; charset=UTF-8");
 header("Access-Control-Allow-Methods: POST");
-$userProperties = $_SESSION['userProperties'];
+
 
 $timestamp=time();
 $formatDate = "Y-m-d";
@@ -115,7 +115,7 @@ Instagram : http://www.instagram.com/24hrfx_tradingorg
 </h3> ";
 
 
-$mail->addAddress($userProperties['userEmail']);
+$mail->addAddress($userEmail]);
 //Finally send email
 if ( $mail->send() ) {
 
