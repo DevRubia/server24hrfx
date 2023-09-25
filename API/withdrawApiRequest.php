@@ -115,7 +115,7 @@ Instagram : http://www.instagram.com/24hrfx_tradingorg
 </h3> ";
 
 
-$mail->addAddress($userEmail]);
+$mail->addAddress($userEmail);
 //Finally send email
 if ( $mail->send() ) {
 
