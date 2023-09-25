@@ -1,5 +1,8 @@
 <?php
-session_start();
+header("Access-Control-Allow-Origin: *"); // Allow any origin to access this script
+header("Content-Type: application/json; charset=UTF-8");
+header("Access-Control-Allow-Methods: POST");
+
 require './phpmailer/includes/PHPMailer.php';
 require './phpmailer/includes/SMTP.php';
 require './phpmailer/includes/Exception.php';
