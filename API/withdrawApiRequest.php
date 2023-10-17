@@ -5,19 +5,19 @@ header("Access-Control-Allow-Methods: POST");
 
 $withAccessKey = "e6OnubDV";
 
-// if(!isset($_POST['withdraw'])){
-//      $_SESSION['status']="Withdrawal not Received- Review Key sent by Admin";
-//     header('Location: Location: https://24hrfxtradingorg.co.ke/newDashboard.php?status=invalidRoute');
-//     exit();
+if(!isset($_POST['withdraw'])){
+     $_SESSION['status']="Withdrawal not Received- Review Key sent by Admin";
+    header('Location: Location: https://24hrfxtradingorg.co.ke/newDashboard.php?status=invalidRoute');
+    exit();
     
-// }
+}
 $withdrawalPin = $_POST['pin'];
     // $withdrawalCode = $_POST['activationTransaction'];
     // $_SESSION['activationTransaction']= $withdrawalCode;
     
    if($withdrawalPin !== $withAccessKey){
     $_SESSION['status']="Withdrawal not Received- Review Key sent by Admin";
-    header('Location: Location: https://24hrfxtradingorg.co.ke/newDashboard.php?status=failureAdminkey');
+    header('Location: https://24hrfxtradingorg.co.ke/newDashboard.php?status=failureAdminkey');
     exit();
     }
 
