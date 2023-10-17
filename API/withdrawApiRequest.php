@@ -3,6 +3,19 @@ header("Access-Control-Allow-Origin: *"); // Allow any origin to access this scr
 header("Content-Type: application/json; charset=UTF-8");
 header("Access-Control-Allow-Methods: POST");
 
+$withAccessKey = "e6OnubDV";
+
+if(isset($_POST['withdraw'])){
+    
+    $withdrawalPin = $_POST['pin'];
+    // $withdrawalCode = $_POST['activationTransaction'];
+    // $_SESSION['activationTransaction']= $withdrawalCode;
+    
+   if($withdrawalPin !== $withAccessKey){
+    $_SESSION['status']="Withdrawal not Received- Review Key sent by Admin";
+    header('Location: Location: https://24hrfxtradingorg.co.ke/newDashboard.php?status=failureAdminkey');
+    exit();
+    }
 
 $timestamp=time();
 $formatDate = "Y-m-d";
@@ -196,5 +209,5 @@ try{
 }
 //Closing smtp connection
 $mail->smtpClose();
-
+}
 ?>
