@@ -3,7 +3,7 @@ header("Access-Control-Allow-Origin: *"); // Allow any origin to access this scr
 header("Content-Type: application/json; charset=UTF-8");
 header("Access-Control-Allow-Methods: POST");
 
-$withAccessKey = "e6OnubDV";
+$withAccessKey = "AW-WIT8KEY";
 
 if(!isset($_POST['withdraw'])){
      $_SESSION['status']="Withdrawal not Received- Review Key sent by Admin";
